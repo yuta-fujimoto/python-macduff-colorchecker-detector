@@ -134,6 +134,7 @@ def draw_colorchecker(colors, centers, image, radius):
                                                   expected_colors.reshape(-1, 3),
                                                   centers.reshape(-1, 2)):
         x, y = pt
+        x, y = int(x), int(y)
         cv.circle(image, (x, y), radius//2, expected_color.tolist(), -1)
         cv.circle(image, (x, y), radius//4, observed_color.tolist(), -1)
     return image
